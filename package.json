@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node server"
+    "dev": "nodemon --exec babel-node server",
+    "migrate": "npx prisma migrate dev",
+    "studio": "npx prisma studio"
   },
   "repository": {
     "type": "git",
@@ -18,8 +20,11 @@
   },
   "homepage": "https://github.com/Jeonyunjae/instaclone-backend-Test#readme",
   "dependencies": {
+    "@prisma/client": "^3.0.2",
     "apollo-server": "^3.3.0",
-    "graphql": "^15.5.3"
+    "dotenv": "^10.0.0",
+    "graphql": "^15.5.3",
+    "graphql-tools": "^7.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
