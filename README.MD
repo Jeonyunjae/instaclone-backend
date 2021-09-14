@@ -8,10 +8,28 @@ Instaclone Backend.
 - [ ] See Profile
 - [ ] Login
 - [ ] Edit Profile
-- [ ] Follow User
-- [ ] Unfollow User
-- [ ] Change Avatar (Image Upload)
+- [X] Follow User
+- [X] Unfollow User
+- [X] Change Avatar (Image Upload)
 
+
+
+
+=================================
+4.4 Login part
+---------------------------------
+
+로그인 기능 추가
+
+mutation{
+  login(username:"nico",password:"123"){
+    ok
+    token
+    error
+  }
+}
+
+jwt 방식 사용
 
 
 
@@ -21,6 +39,20 @@ Instaclone Backend.
 
 계정 만들기
 bcrypt 설치 비밀번호 해쉬로 변경
+
+
+mutation{
+  createAccount(
+    firstName:"Nico"
+    lastName:"las"
+    email:"nico@las.com"
+    password:"123"
+    username:"nico"
+  ){
+    username
+  }
+}
+
 
 =================================
 
