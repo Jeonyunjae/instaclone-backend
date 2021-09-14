@@ -16,6 +16,22 @@ Instaclone Backend.
 
 
 =================================
+4.8 Create Account part
+---------------------------------
+
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMxNjM4NjQyfQ.e-JwHJ7yD7k231Ln49cK9BD1xh1pj82yDNNolZBHfN4"
+
+
+mutation{
+  editProfile(email:"nico@las.com", token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMxNjM4NjQyfQ.e-JwHJ7yD7k231Ln49cK9BD1xh1pj82yDNNolZBHfN4"){
+    ok
+    error
+  }
+}
+
+=================================
+
+=================================
 4.4 Login part
 ---------------------------------
 
