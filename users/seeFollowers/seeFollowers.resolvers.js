@@ -2,7 +2,7 @@ import client from "../../client";
 
 export default {
   Query: {
-    seeFollowing: async (_, { username, lastId }) => {
+    seeFollowers: async (_, { username, page }) => {
       const ok = await client.user.findUnique({
         where: { username },
         select: { id: true },
@@ -13,16 +13,19 @@ export default {
           error: "User not found",
         };
       }
-      const following = await client.user
+      const followers = await client.user
         .findUnique({ where: { username } })
-        .following({
+        .followers({
           take: 5,
-          skip: lastId ? 1 : 0,
-          ...(lastId && { cursor: { id: lastId } }),
+          skip: (page - 1) * 5,
         });
+      const totalFollowers = await client.user.count({
+        where: { following: { some: { username } } },
+      });
       return {
         ok: true,
-        following,
+        followers,
+        totalPages: Math.ceil(totalFollowers / 5),
       };
     },
   },

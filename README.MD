@@ -11,9 +11,51 @@ Instaclone Backend.
 - [x] Change Avatar (Image Upload)
 - [x] Follow User
 - [x] Unfollow User
-- [x] See Followers and See Following w/ Pagination
+- [x] See Followers w/ Pagination
+- [x] See Following w/ Pagination
 - [x] Computed Fields
 - [x] Search Users
+
+## Photos
+
+- [x] Upload Photo (Parse #)
+- [x] See Photo
+- [x] See Hashtag
+- [x] Search Photos
+- [x] Edit Photo
+- [x] Like / Unlike Photo
+- [x] See Photo Likes
+- [x] See Feed
+- [x] See Photo Comments
+- [x] Delete Photo
+
+## Comments
+
+- [x] Comment on Photo
+- [x] Delete Comment
+- [x] Edit Comment
+
+
+
+
+
+=================================
+6.5 seePhoto
+---------------------------------
+
+로그인해서 인증을 해야만 접근이 가능
+
+token은 패킷의 해더에 들어감
+
+
+=================================
+6.9 Authentication 
+---------------------------------
+해더에 아래의 인자 입력
+
+{
+  "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMzNTg5ODE1fQ.kiyigKbJnAMToSqKdeS27SREMUCXmKbdr1hdOwNIcNY"
+}
 
 
 =================================
