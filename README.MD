@@ -35,6 +35,21 @@ Instaclone Backend.
 - [x] Delete Comment
 - [x] Edit Comment
 
+## Refactor
+
+- [x] Mutation Responses
+
+## Extras
+
+- [x] S3 Image Upload
+
+## DMs
+
+- [x] See Rooms
+- [x] Send Message (Create Room)
+- [x] See Room
+- [ ] Computed Fields
+- [ ] Realtime Messages
 
 
 
