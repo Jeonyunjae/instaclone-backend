@@ -2,53 +2,54 @@
 
 Instaclone Backend.
 
-## User:
+## User
+[✅] Create Account
+[✅] See Profile
+[✅] Login
+[✅] Edit Profile
+[✅] Change Avatar (Image Upload)
+[✅] Change Avatar (Image Upload)
+[✅] Follow User
+[✅] Unfollow User
+[✅] See Followers w/ Pagination
+[✅] See Following w/ Pagination
+[✅] Follow User
+[✅] Unfollow User
+[✅] Search Users
+[✅] See Followers
+[✅] See Following
 
-- [x] Create Account
-- [x] See Profile
-- [x] Login
-- [x] Edit Profile
-- [x] Change Avatar (Image Upload)
-- [x] Follow User
-- [x] Unfollow User
-- [x] See Followers w/ Pagination
-- [x] See Following w/ Pagination
-- [x] Computed Fields
-- [x] Search Users
+ ## Photos
 
-## Photos
+[✅] Upload Photo
+[✅] See Photo
+[✅] See Hashtags
+[✅] Search Photos
+[✅] Edit Photo
+[✅] Like / Unlike Photo
+[✅] See Photo Likes
+[✅] See Feed
+[✅] See Photo Comments
+[✅] Delete Photo
 
-- [x] Upload Photo (Parse #)
-- [x] See Photo
-- [x] See Hashtag
-- [x] Search Photos
-- [x] Edit Photo
-- [x] Like / Unlike Photo
-- [x] See Photo Likes
-- [x] See Feed
-- [x] See Photo Comments
-- [x] Delete Photo
+ ## Comments
 
-## Comments
-
-- [x] Comment on Photo
-- [x] Delete Comment
-- [x] Edit Comment
+[✅] Comment on Photo
+[✅] Delete Comment
+[✅] Edit Comment
 
 ## Refactor
-
-- [x] Mutation Responses
+[✅] Mutation Response
 
 ## Extras
-
-- [x] S3 Image Upload
+[✅] S3 Image Upload
 
 ## DMs
-
-- [x] See Rooms
-- [x] Send Message (Create Room)
-- [x] See Room
-- [ ] Computed Fields
+- [✅] See Rooms
+- [✅] Send Message (Create Room)
+- [✅] See Room
+- [✅] Computed Fields
+- [✅] Send (Read) Message
 - [ ] Realtime Messages
 
 

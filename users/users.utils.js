@@ -18,13 +18,13 @@ export const getUser = async (token) => {
   }
 };
 
-export function protectedResolver(ourResolver) {
-  return function (root, args, context, info) {
+export const protectedResolver =
+  (ourResolver) => (root, args, context, info) => {
     if (!context.loggedInUser) {
       const query = info.operation.operation === "query";
-      if (query) {
+      if (query){
         return null;
-      } else {
+      }else{
         return {
           ok: false,
           error: "Please log in to perform this action.",
@@ -33,4 +33,21 @@ export function protectedResolver(ourResolver) {
     }
     return ourResolver(root, args, context, info);
   };
-}
+
+
+//  function protectedResolver( ourResolver ) {
+//   return function (root, args, context, info){
+//     if (!context.loggedInUser) {
+//       const query = info.operation.operation === "query";
+//       if (query){
+//         return null;
+//       }else{
+//         return {
+//           ok: false,
+//           error: "Please log in to perform this action.",
+//         };
+//       }
+//     }
+//     return ourResolver(root,args,context,info);
+//    }
+//  } 

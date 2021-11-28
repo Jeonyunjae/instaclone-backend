@@ -12,7 +12,7 @@ export default {
       if (!photo) {
         return {
           ok: false,
-          error: "Photo not found",
+          error: "Photo not found.",
         };
       }
       const likeWhere = {

@@ -1,18 +1,17 @@
-import bcrypt from "bcrypt";
+import { async } from "regenerator-runtime";
 import client from "../../client";
+import bcrypt from "bcrypt";
+
 
 export default {
   Mutation: {
-    createAccount: async (
-      _,
-      { firstName, lastName, username, email, password }
-    ) => {
+    createAccount: async (_, { userId, userName, email, password }) => {
       try {
         const existingUser = await client.user.findFirst({
           where: {
             OR: [
               {
-                username,
+                userId,
               },
               {
                 email,
@@ -21,15 +20,15 @@ export default {
           },
         });
         if (existingUser) {
-          throw new Error("This username/password is already taken.");
+          throw new Error("This userId/password is already taken.");
         }
         const uglyPassword = await bcrypt.hash(password, 10);
-        await client.user.create({
+
+        const user = await client.user.create({
           data: {
-            username,
+            userId,
+            userName,
             email,
-            firstName,
-            lastName,
             password: uglyPassword,
           },
         });
@@ -39,8 +38,8 @@ export default {
       } catch (e) {
         return {
           ok: false,
-          error: "Cant create account.",
-        };
+          error: "Can't create account.",
+        }
       }
     },
   },

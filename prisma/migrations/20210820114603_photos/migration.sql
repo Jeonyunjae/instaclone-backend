@@ -5,9 +5,9 @@ CREATE TABLE "Photo" (
     "file" TEXT NOT NULL,
     "caption" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updateAt" TIMESTAMP(3) NOT NULL,
 
-    CONSTRAINT "Photo_pkey" PRIMARY KEY ("id")
+    PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -17,7 +17,7 @@ CREATE TABLE "Hashtag" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
-    CONSTRAINT "Hashtag_pkey" PRIMARY KEY ("id")
+    PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -33,7 +33,7 @@ CREATE UNIQUE INDEX "_HashtagToPhoto_AB_unique" ON "_HashtagToPhoto"("A", "B");
 CREATE INDEX "_HashtagToPhoto_B_index" ON "_HashtagToPhoto"("B");
 
 -- AddForeignKey
-ALTER TABLE "Photo" ADD CONSTRAINT "Photo_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "Photo" ADD FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "_HashtagToPhoto" ADD FOREIGN KEY ("A") REFERENCES "Hashtag"("id") ON DELETE CASCADE ON UPDATE CASCADE;

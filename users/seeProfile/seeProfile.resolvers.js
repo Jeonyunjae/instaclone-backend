@@ -1,16 +1,17 @@
 import client from "../../client";
 
-export default {
-  Query: {
-    seeProfile: (_, { username }) =>
-      client.user.findUnique({
-        where: {
-          username,
-        },
-        include: {
-          following: true,
-          followers: true,
-        },
-      }),
-  },
-};
+ export default {
+   Query: {
+     seeProfile: (_, { userId }) => {
+      return client.user.findUnique({
+         where: {
+           userId,
+         },
+         include: {
+           following: true,
+           followers: true,
+         }
+       });
+    },
+   },
+ };
